@@ -1,76 +1,80 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
- const Formulario = () => {
 
+const Formulario = () => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
+  const clickBotonIniciar = handleSubmit((data) => {
+    console.log(data);
+  });
 
   return (
-    <div>
-        <h1>Formulario</h1>
-
-        
-      {/* <div
-        class="container-md"
-        style="
-        border: 1px solid black;
-        background-color: rgb(24, 103, 58);
-        margin-top: 20vh;
-      "
+    <div className="container">
+      <form
+        onSubmit={clickBotonIniciar}
+        className=""
       >
-        <form>
-          <div class="m-5">
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail1"
-              placeholder="Usuario"
-              aria-describedby="emailHelp"
-            />
-            <div id="emailHelp" class="form-text" style="color: white">
-              Nunca compartiremos su correo electrónico con nadie más.
-            </div>
-          </div>
-          <div class="m-5">
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Contraseña"
-              aria-describedby="passwordHelpBlock"
-            />
-            <div id="passwordHelpBlock" class="form-text" style="color: white">
-              Su contraseña debe tener entre 8 y 20 caracteres, contener letras
-              y números, y no debe contener espacios, caracteres especiales ni
-              emoji.
-            </div>
-          </div>
+        <div className="card ">
+          <h1 className="text-center mb-4">Inciar sesión</h1>
+          <label htmlFor="txtUser">Usuario</label>
+          <input
+            className="form-control shadow-sm"
+            type="text"
+            placeholder="Usuario"
+            id="txtUser"
+            name="txtUser"
+            {...register("userName", {
+              required: {
+                value: true,
+                message: "Por favor ingrese el usuario",
+              },
+              minLength: {
+                value: 2,
+                message: "El usuario debe tener minimo 2 caracteres",
+              },
+              pattern: {
+                value: /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/,
+                message: "Por favor ingres un correo valido",
+              },
+            })}
+          />
+          {errors.userName && (
+            <span className="text-danger"> {errors.userName.message} </span>
+          )}
 
-          <div class="form-check m-5">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label text-light" for="exampleCheck1">
-              Acepto terminos y condiciones
-            </label>
-          </div>
-          <div class="d-flex justify-content-center m-5">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg"
-              id="btn"
-              target="-bla"
-            >
-              Enviar
-            </button>
-          </div>
-        </form>
-      </div>
-      <div>
-        <p id="parraf" class="text-dark text-center fs-1"></p>
-      </div> */}
-        
+          <label htmlFor="txtPass" className="mt-4">
+            Contraseña
+          </label>
+
+          <input
+            className="form-control shadow-sm"
+            type="password"
+            placeholder="Contraseña"
+            id="txtPass"
+            name="txtPass"
+            {...register("password", {
+              required: {
+                value: true,
+                message: "Por favor ingrese una contraseña",
+              },
+              minLength: {
+                value: 8,
+                message: "La contraseña debe contener minimo 8 caracteres",
+              },
+            })}
+          />
+          {errors.password && (
+            <span className="text-danger">{errors.password.message}</span>
+          )}
+
+          <button className="btn btn-success mt-4">Iniciar sesión</button>
+        </div>
+      </form>
     </div>
   );
 };
