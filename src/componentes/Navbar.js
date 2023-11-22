@@ -1,6 +1,5 @@
 import React from 'react'
 import { Outlet,Link } from 'react-router-dom'
-import { Imagenrotan } from './Imagenrotan'
 import imagen from '../imagenes/imagen'
 
 
@@ -33,6 +32,11 @@ import imagen from '../imagenes/imagen'
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
+        </li>
+        <li className='position-absolute bottom-25 end-0 btn'>
+          
+          <Link to={'/Formulario'}><button type="button" class="btn btn-primary">Ingresar</button></Link>
+  
         </li>
       </ul>
     </div>
