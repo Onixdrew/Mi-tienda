@@ -1,1 +1,33 @@
 
+
+.player-wrapper {
+    position: relative;
+    
+    
+  }
+  
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+
+
+  .carvideo{
+    width: 100%;
+  
+}
+.l{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.navbar-brand:hover{
+    color: rgb(194, 197, 32)
+   
+  }
+
+
+.hey{
+    margin: 2% 2% 2% 45%;
+    
+}

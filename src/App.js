@@ -3,7 +3,6 @@ import { Navbar } from "./componentes/Navbar";
 import Comprar from './pages/Comprar'
 import Postventas from './pages/Postventas'
 import Vehiculos from './pages/Vehiculos'
-import { Prueba } from "./pages/prueba";
 import { Formx } from "./pages/Formx";
 import { Home } from "./pages/Home";
 

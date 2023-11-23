@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import imagen from "../imagenes/imagen";
+import '../App.css'
 
 export const Navbar = () => {
   return (
     <div className="mb-5 mt-3 ">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <Link class="navbar-brand  fs-1" to="/">
+        <div class="container-fluid " >
+          <Link class="navbar-brand  fs-1" to="/" >
             CHEVROLET
           </Link>
           <button
@@ -66,10 +66,11 @@ export const Navbar = () => {
                   </li>
                 </ul>
               </li>
-              <li className="position-absolute bottom-25 end-0 btn">
+              <li className="hey">
                 <Link to={"/Formx"}>
-                  <button type="button" class="btn btn-primary">
-                    Ingresar
+                  <button type="button" class="btn l btn-primary">
+                    <b>Ingresar</b>
+                    
                   </button>
                 </Link>
               </li>
